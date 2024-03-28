@@ -1,1 +1,2 @@
-students.sort()
+ a.start()
+    b.start()
