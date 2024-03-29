@@ -17,6 +17,7 @@ label = Label(window,
               pady=20,
               image=photo,
               compound='bottom')
+
 label.pack()
 # label.place(x=0,y=0)
 
