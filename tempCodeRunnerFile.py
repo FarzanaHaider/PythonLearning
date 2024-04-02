@@ -1,1 +1,2 @@
-background = background.subsample(background.width() // 500,background.height() // 500)
+ # server.sendmail(sender,receiver,message)
+    # print("Email has been sent!")
