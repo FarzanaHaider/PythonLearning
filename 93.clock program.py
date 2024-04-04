@@ -14,6 +14,7 @@ def update():
     window.after(1000,update)  # will update after 1000 miliseconds
 
 window = Tk()
+window.title("My Clock")
 
 time_label = Label(window,font=("Arial",50),fg="#00FF00",bg="black")
 time_label.pack()
