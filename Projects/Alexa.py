@@ -39,6 +39,8 @@ def run_alexa():
         time = datetime.datetime.now().strftime('%I:%M %p')
         print(time)
         talk('Current time is '+time)
+    elif 'how are you' in command:
+        talk('I am fine and you')
     elif 'date' in command:
         talk('sorry, I have a headache')
     elif 'are you single' in command:
@@ -47,11 +49,16 @@ def run_alexa():
         joke=pyjokes.get_joke()
         print(joke)
         talk(joke)
-    elif 'who' or 'what' or 'why' in command:
-        #person = command.replace('wikipedia','')
-        info = wikipedia.summary(person,1)
-        print(info)
-        talk(info)
+    elif 'tell me' in command:
+        person = command.replace('tell me','')
+        try:
+            info = wikipedia.summary(person,1)
+            print(info)
+            talk(info)
+        except wikipedia.exceptions.DisambiguationError as e:
+            talk("I'm sorry, I couldn't understand your query.")
+    elif 'bye' in command:
+        quit
     else:
         talk('Please say the command again.')
 
